@@ -3,12 +3,17 @@
 -- so find the least populated country in Southern Europe, and we'll start looking for her there.
 SELECT name FROM country 
 WHERE region = 'Southern Europe'
+ORDER BY population ASC
+LIMIT 1
 
 
 
 -- Clue #2: Now that we're here, we have insight that Carmen was seen attending language classes in
 -- this country's officially recognized language. Check our databases and find out what language is
 -- spoken in this country, so we can call in a translator to work with you.
+SELECT c.name, cl.language FROM country c
+JOIN countrylanguage cl ON c.code = cl.countrycode
+WHERE c.name = 'Holy See (Vatican City State)'
 
 
 
