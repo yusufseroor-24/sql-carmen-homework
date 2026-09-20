@@ -50,7 +50,9 @@ WHERE ci.name LIKE 'Serra%' AND ci.name != 'Serravalle';
 -- Clue #6: We're close! Our South American agent says she just got a taxi at the airport, and is headed towards
  -- the capital! Look up the country's capital, and get there pronto! Send us the name of where you're headed and we'll
  -- follow right behind you!
-
+SELECT co.name, ci.name FROM country co 
+JOIN city ci ON co.capital = ci.id
+WHERE co.name = 'Brazil'
 
 
 -- Clue #7: She knows we're on to her – her taxi dropped her off at the international airport, and she beat us to
