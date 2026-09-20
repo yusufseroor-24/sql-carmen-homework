@@ -69,7 +69,9 @@ WHERE co.name = 'Brazil'
 
 
 -- We're counting on you, gumshoe. Find out where she's headed, send us the info, and we'll be sure to meet her at the gates with bells on.
+SELECT ci.name, co.name FROM city ci
+JOIN country co ON ci.countrycode = co.code
+WHERE ci.population = 91084;
 
 
-
--- She's in ____________________________!
+-- She's in ___________Santa Monica_________________!
